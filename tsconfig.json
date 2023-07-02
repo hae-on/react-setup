@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true, // import * as React from 'react' => import React from 'react'
+    "sourceMap": true,
+    "lib": ["ES2022", "DOM"],
+    "jsx": "react", // jsx 확장자는 React에서 사용함을 알림, 다른라이브러리에서도 사용되기 때문에 혼동 방지
+    "module": "esnext", // 최신 es모듈을 사용하겠다
+    "moduleResolution": "Node", // node가 import, export를 해석할 수 있도록 해줌
+    "target": "es5", // es5 로 컴파일
+    "strict": true, // 엄격모드 any 사용을 금지한다
+    "resolveJsonModule": true, // Json 파일 import 허용
+    "baseUrl": "."
+  }
+}
