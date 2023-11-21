@@ -12,9 +12,12 @@
     "lint:styled": "stylelint './src/**/*.tsx' --fix"
   },
   "dependencies": {
+    "@tanstack/react-query": "4.32.6",
+    "@tanstack/react-query-devtools": "4.32.6",
     "msw-storybook-addon": "^1.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.19.0",
     "styled-components": "^6.1.1"
   },
   "devDependencies": {
