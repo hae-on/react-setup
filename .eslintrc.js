@@ -8,6 +8,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:storybook/recommended',
+    'plugin:import/recommended',
   ],
   ignorePatterns: ['*.js'],
   overrides: [
@@ -28,7 +29,7 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname,
   },
-  plugins: ['@typescript-eslint', 'react'],
+  plugins: ['@typescript-eslint', 'react', 'import'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-var-requires': 0,
@@ -52,5 +53,33 @@ module.exports = {
         html: true,
       },
     ],
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal', ['parent', 'sibling', 'index'], 'object', 'unknown'],
+        pathGroups: [
+          {
+            pattern: '@storybook/**',
+            group: 'external',
+          },
+          {
+            pattern: '@*',
+            group: 'unknown',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['unknown'],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+        'newlines-between': 'always',
+      },
+    ],
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {},
+      webpack: {},
+    },
   },
 };
